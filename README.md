@@ -140,3 +140,10 @@ This confirmed that the orders-service was properly deployed and accessible with
 This screenshot shows the gcloud command used to delete the GKE cluster after completing the lab.  
 It verifies that all resources were cleaned up successfully at the end of the exercise.
 
+## Kubernetes Service Discovery Diagram
+
+![Service Discovery Diagram](screenshots/diagram.png)
+
+This diagram shows the architecture of the Kubernetes cluster used in this lab.  
+It shows how the http-client pod communicates with a Service, which routes traffic through an EndpointSlice to Pods managed by a ReplicaSet and Deployment.  
+Both the orders-service and products-service follow the same structure, demonstrating how Kubernetes provides stable service discovery even when Pod IPs change.
