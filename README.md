@@ -147,3 +147,28 @@ It verifies that all resources were cleaned up successfully at the end of the ex
 This diagram shows the architecture of the Kubernetes cluster used in this lab.  
 It shows how the http-client pod communicates with a Service, which routes traffic through an EndpointSlice to Pods managed by a ReplicaSet and Deployment.  
 Both the orders-service and products-service follow the same structure, demonstrating how Kubernetes provides stable service discovery even when Pod IPs change.
+
+## Reflection Questions
+
+### 1. Relationship between Deployment, ReplicaSet, and Pods
+
+A Deployment defines the desired state of an application, including the container image and the number of replicas that should be running.  
+The Deployment creates and manages a ReplicaSet, which is responsible for maintaining the correct number of Pods at all times.  
+Pods are considered ephemeral because they can be deleted, restarted, or recreated automatically by Kubernetes, often receiving new names or IP addresses while the Deployment keeps the system stable.
+
+---
+
+### 2. How a Service (ClusterIP) enables stable access
+
+A Service with a ClusterIP provides a stable network endpoint that clients inside the cluster can use to access an application.  
+Instead of connecting directly to Pod IP addresses, which can change frequently, clients use the Service DNS name such as `orders-service`.  
+The Service uses label selectors (for example `app=orders`) to automatically route traffic to the correct Pods, ensuring communication continues even if Pods restart or scale.
+
+---
+
+### 3. What an EndpointSlice is and why it matters
+
+An EndpointSlice represents the list of active Pod IP addresses behind a Service.  
+It connects the stable Service to the changing set of Pods and allows Kubernetes to efficiently route traffic between them.  
+In this lab, the EndpointSlice showed how the Service dynamically tracked the available Pods, demonstrating how Kubernetes maintains service discovery even when Pods are replaced.
+
