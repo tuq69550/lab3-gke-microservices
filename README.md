@@ -161,8 +161,8 @@ Pods are considered ephemeral because they can be deleted, restarted, or recreat
 ### 2. How a Service (ClusterIP) enables stable access
 
 A Service with a ClusterIP provides a stable network endpoint that clients inside the cluster can use to access an application.  
-Instead of connecting directly to Pod IP addresses, which can change frequently, clients use the Service DNS name such as `orders-service`.  
-The Service uses label selectors (for example `app=orders`) to automatically route traffic to the correct Pods, ensuring communication continues even if Pods restart or scale.
+Instead of connecting directly to Pod IP addresses, which can change frequently, clients use the Service DNS name such as orders-service.  
+The Service uses label selectors (like app=orders) to automatically route traffic to the correct Pods, ensuring communication continues even if Pods restart or scale.
 
 ---
 
