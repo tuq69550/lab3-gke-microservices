@@ -122,20 +122,20 @@ I used this information to confirm that all objectives were completed.
 This final screenshot shows the completed state of the lab environment after finishing all tasks.  
 It serves as proof that the lab was successfully completed.
 
-### Figure 21 – Orders Service API Response
-![Figure 21](screenshots/figure21.png)
+### fig 21 – Orders Service API Response
+![fig 21](screenshots/fig21.png)
 
 In this step, I used kubectl exec with curl to send a request to the orders-service API.  
 The terminal output shows the JSON response, confirming that the microservice was working correctly inside the cluster.
 
-### Figure 22 – Pods and Service Verification
-![Figure 22](screenshots/figure22.png)
+### fig 22 – Pods and Service Verification
+![fig 22](screenshots/fig22.png)
 
 Here I verified the running pods, cluster IP, and service endpoints using kubectl commands.  
 This confirmed that the orders-service was properly deployed and accessible within Kubernetes.
 
-### Figure 23 – Cluster Deletion Confirmation
-![Figure 23](screenshots/figure23.png)
+### fig 23 – Cluster Deletion Confirmation
+![fig 23](screenshots/fig23.png)
 
 This screenshot shows the gcloud command used to delete the GKE cluster after completing the lab.  
 It verifies that all resources were cleaned up successfully at the end of the exercise.
